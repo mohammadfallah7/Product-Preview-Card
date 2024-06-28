@@ -1,0 +1,39 @@
+// Colors
+$Dark-cyan: #3c8067;
+$cream: #f2ebe3;
+$very-dark-blue: #1c232b;
+$dark-grayish-blue: #6c7289;
+$white: #ffffff;
+
+// Breakpoints
+$screen-sm: 640px;
+
+// Media Query
+@mixin sm {
+  @media screen and (min-width: $screen-sm) {
+    @content;
+  }
+}
+
+// Font Family
+$montserrat: "Montserrat";
+$fraunces: "Fraunces";
+
+// Font Face
+@font-face {
+  font-family: $montserrat;
+  src: url(../assets/fonts/Montserrat/Montserrat-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: $montserrat;
+  src: url(../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: $fraunces;
+  src: url(../assets/fonts/Fraunces/Fraunces-Bold.ttf);
+  font-weight: 700;
+}
