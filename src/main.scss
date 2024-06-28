@@ -3,3 +3,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: base.$montserrat;
+  font-weight: 500;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: base.$cream;
+}
+
+#card {
+  width: 90%;
+  max-width: base.$screen-sm;
+  border-radius: 0.5rem;
+  background-color: base.$white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @include base.sm {
+    flex-direction: row;
+  }
+}
+
+.picture {
+  @include base.sm {
+    width: 50%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    @include base.sm {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+  }
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+
+  @include base.sm {
+    width: 50%;
+    justify-content: space-around;
+  }
+
+  h3 {
+    letter-spacing: 0.45rem;
+    font-size: 0.75rem;
+    color: base.$dark-grayish-blue;
+  }
+
+  &__title {
+    font-family: base.$fraunces;
+    font-weight: 700;
+    font-size: 2.125rem;
+    line-height: 1;
+    color: base.$very-dark-blue;
+  }
+
+  &__description {
+    color: base.$dark-grayish-blue;
+    font-size: 0.9rem;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: base.$Dark-cyan;
+
+    &--new {
+      font-family: base.$fraunces;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    &--old {
+      color: base.$dark-grayish-blue;
+      text-decoration: line-through;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: base.$Dark-cyan;
+    color: base.$white;
+    border-radius: 0.5rem;
+    padding: 0.875rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+    transition: background-color ease 0.3s;
+
+    &:hover {
+      background-color: darken($color: base.$Dark-cyan, $amount: 15%);
+    }
+  }
+}
